@@ -1,0 +1,24 @@
+{
+  "name": "hackelite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "db":"mongod --dbpath dbDATA"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpitBhalla/hackshetra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arpitBhalla/hackshetra/issues"
+  },
+  "homepage": "https://github.com/arpitBhalla/hackshetra#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15"
+  }
+}
