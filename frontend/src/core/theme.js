@@ -1,5 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { deepOrange, blue } from "@material-ui/core/colors";
+
 export default createMuiTheme({
   typography: {
     fontFamily: "Poppins, sans-serif",
@@ -9,6 +10,7 @@ export default createMuiTheme({
     secondary: {
       main: deepOrange[500],
     },
+    type: "dark",
   },
   overrides: {
     MuiCssBaseline: {

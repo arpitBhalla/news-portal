@@ -6,7 +6,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 const Auth = loadable(() => import("./Auth"), {
   fallback: <LinearProgress />,
 });
-const Doctor = loadable(() => import("./Doctor"), {
+const Doctor = loadable(() => import("./Epaper"), {
   fallback: <LinearProgress />,
 });
 
@@ -14,10 +14,10 @@ const Pages = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path={"/auth"} component={Auth} />
         <Route path={"/"} component={Doctor} />
         <Route path={"/blog"} component={Doctor} />
         <Route path={"/profile"} component={Doctor} />
-        <Route exact path={"/auth"} component={Auth} />
       </Switch>
     </BrowserRouter>
   );
