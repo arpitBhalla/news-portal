@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "components/Navbar";
-import { pdfjs, Document, Page } from "react-pdf";
+// import { pdfjs, Document, Page } from "react-pdf";
 import Container from "@material-ui/core/Container";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import Box from "@material-ui/core/Box";
+import { Paper } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Epaper = () => {
   React.useEffect(() => {
@@ -15,15 +18,68 @@ const Epaper = () => {
     <div>
       <Navbar />
       <Container maxWidth="md">
-        <Document
-          file={"./../sample.pdf"}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+        <Typography variant="h5" color="textPrimary">
+          Latest News
+        </Typography>
+        <Box component={Paper}>kjo</Box>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </Container>
     </div>
   );

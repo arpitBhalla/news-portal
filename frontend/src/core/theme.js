@@ -3,19 +3,19 @@ import { deepOrange, blue } from "@material-ui/core/colors";
 
 export default createMuiTheme({
   typography: {
-    fontFamily: "Poppins, sans-serif",
+    fontFamily: "Noto Sans , sans-serif",
   },
   palette: {
     primary: blue,
     secondary: {
       main: deepOrange[500],
     },
-    type: "dark",
+    // type: "dark",
   },
   overrides: {
     MuiCssBaseline: {
       "@global": {
-        "@font-face": ["Poppins"],
+        "@font-face": ["Noto Sans"],
       },
     },
   },

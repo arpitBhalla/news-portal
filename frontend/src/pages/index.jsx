@@ -16,8 +16,6 @@ const Pages = () => {
       <Switch>
         <Route exact path={"/auth"} component={Auth} />
         <Route path={"/"} component={Doctor} />
-        <Route path={"/blog"} component={Doctor} />
-        <Route path={"/profile"} component={Doctor} />
       </Switch>
     </BrowserRouter>
   );
