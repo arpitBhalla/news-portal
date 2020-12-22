@@ -60,6 +60,10 @@ const Epaper = () => {
           defaultScale={1}
           defaultPositionX={200}
           defaultPositionY={100}
+          // onPanning={({ positionX }) => {
+          //   if (positionX > 90 && img.canPrev) previousPage();
+          //   else if (positionX < -90 && img.canNext) nextPage();
+          // }}
         >
           {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
             <React.Fragment>
