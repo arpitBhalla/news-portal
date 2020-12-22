@@ -13,6 +13,7 @@ import {
 } from "react-icons/hi";
 import IconButton from "@material-ui/core/IconButton";
 import Pagination from "@material-ui/lab/Pagination";
+import { Backdrop, LinearProgress } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -25,6 +26,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Epaper = () => {
   const classes = useStyles();
+  const [loading, setLoading] = React.useState(true);
+  let imgs = [
+    require("static/0001.jpg").default,
+    require("static/0002.jpg").default,
+    require("static/0003.jpg").default,
+    require("static/0004.jpg").default,
+  ];
   React.useEffect(() => {
     document.title = "Epaper | Sirsa Today";
   }, []);
@@ -33,13 +41,8 @@ const Epaper = () => {
     canNext: true,
     canPrev: false,
   });
-  const imgs = [
-    require("static/0001.jpg").default,
-    require("static/0002.jpg").default,
-    require("static/0003.jpg").default,
-    require("static/0004.jpg").default,
-  ];
   const nextPage = () => {
+    setLoading(true);
     setImg(({ index }) => ({
       index: index + 1,
       canNext: index + 1 < imgs.length - 1,
@@ -47,6 +50,7 @@ const Epaper = () => {
     }));
   };
   const previousPage = () => {
+    setLoading(true);
     setImg(({ index }) => ({
       index: index - 1,
       canNext: index - 1 < imgs.length - 1,
@@ -54,7 +58,11 @@ const Epaper = () => {
     }));
   };
   const handleChange = (event, value) => {
-    setImg((e) => ({ ...e, index: value - 1 }));
+    setImg({
+      index: value - 1,
+      canNext: value - 1 < imgs.length - 1,
+      canPrev: value - 1 > 0,
+    });
   };
   const panPageChange = (positionX) => {
     // let f = true;
@@ -71,7 +79,7 @@ const Epaper = () => {
   return (
     <div>
       <Navbar />
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <TransformWrapper
           defaultScale={1}
           defaultPositionX={200}
@@ -120,11 +128,15 @@ const Epaper = () => {
                   </div>
                 </Hidden>
               </div>
+              {loading && <LinearProgress />}
               <TransformComponent>
                 <img
                   src={imgs[img.index]}
                   className={classes.image}
                   alt="test"
+                  onLoad={() => {
+                    setLoading(false);
+                  }}
                 />
               </TransformComponent>
             </React.Fragment>

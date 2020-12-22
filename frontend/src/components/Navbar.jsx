@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 export default () => {
   const classes = useStyles();
   const trigger = useScrollTrigger({
-    threshold: 30,
+    threshold: 20,
     disableHysteresis: true,
   });
   return (
@@ -52,9 +52,8 @@ export default () => {
               <FaFacebookSquare className={classes.icon} color="#3b5999" />
             </a>
             {/* <a href="https://facebook.com/sirsatoday">
-              <FaTwitter className={classes.icon} color="#55acee" />
             </a> */}
-            {/* <div>
+            <div>
               <Typography variant="body2" color="textSecondary">
                 <b>13</b>
                 <sup>o</sup>C
@@ -62,8 +61,13 @@ export default () => {
               <Typography variant="caption" color="textSecondary">
                 Sirsa
               </Typography>
-            </div> */}
-            {/* <IconButton aria-label="account" onClick={() => {}}>
+            </div>
+            {/* <IconButton
+              aria-label="account"
+              onClick={() => {
+                window.location = "/auth";
+              }}
+            >
               <FaRegUserCircle />
             </IconButton> */}
           </Toolbar>
