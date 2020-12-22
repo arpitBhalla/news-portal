@@ -14,6 +14,7 @@ import {
 import IconButton from "@material-ui/core/IconButton";
 import Pagination from "@material-ui/lab/Pagination";
 import { Backdrop, LinearProgress } from "@material-ui/core";
+import Footer from "components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -82,8 +83,6 @@ const Epaper = () => {
       <Container maxWidth="md">
         <TransformWrapper
           defaultScale={1}
-          defaultPositionX={200}
-          defaultPositionY={100}
           onPanning={({ positionX }) => {
             panPageChange(positionX);
           }}
@@ -143,6 +142,7 @@ const Epaper = () => {
           )}
         </TransformWrapper>
       </Container>
+      <Footer />
     </div>
   );
 };

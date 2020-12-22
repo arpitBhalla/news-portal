@@ -6,8 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import { FaFacebookSquare, FaTwitter, FaRegUserCircle } from "react-icons/fa";
-import IconButton from "@material-ui/core/IconButton";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
@@ -35,7 +34,7 @@ export default () => {
       >
         <Container maxWidth="lg">
           <Toolbar className={classes.bar}>
-            <Typography variant="h6" style={{ flexGrow: 1, color: "red" }}>
+            <Typography variant={"h5"} style={{ flexGrow: 1, color: "red" }}>
               <b>सिरसा टुडे</b>
             </Typography>
             <Typography variant="body2" color="textSecondary">
@@ -62,14 +61,6 @@ export default () => {
                 Sirsa
               </Typography>
             </div>
-            {/* <IconButton
-              aria-label="account"
-              onClick={() => {
-                window.location = "/auth";
-              }}
-            >
-              <FaRegUserCircle />
-            </IconButton> */}
           </Toolbar>
         </Container>
         <Divider />
