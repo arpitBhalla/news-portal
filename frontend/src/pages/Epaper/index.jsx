@@ -26,8 +26,11 @@ const Epaper = () => {
   React.useEffect(() => {
     document.title = "Epaper | Sirsa Today";
   }, []);
-  const [img, setImg] = React.useState(0);
-  const [disable, setDisable] = React.useState(false);
+  const [img, setImg] = React.useState({
+    index: 0,
+    canNext: true,
+    canPrev: false,
+  });
   const imgs = [
     require("static/0001.jpg").default,
     require("static/0002.jpg").default,
@@ -35,9 +38,19 @@ const Epaper = () => {
     require("static/0004.jpg").default,
   ];
   const nextPage = () => {
-    if (img >= imgs.length) setDisable(true);
+    setImg(({ index }) => ({
+      index: index + 1,
+      canNext: index + 1 < imgs.length - 1,
+      canPrev: index + 1 > 0,
+    }));
   };
-  const previousPage = () => {};
+  const previousPage = () => {
+    setImg(({ index }) => ({
+      index: index - 1,
+      canNext: index - 1 < imgs.length - 1,
+      canPrev: index - 1 > 0,
+    }));
+  };
 
   return (
     <div>
@@ -58,21 +71,33 @@ const Epaper = () => {
                   <IconButton aria-label="zoom out" onClick={zoomOut}>
                     <HiOutlineZoomOut />
                   </IconButton>
-                  <IconButton aria-label="" onClick={resetTransform}>
+                  <IconButton aria-label="reset zoom" onClick={resetTransform}>
                     <HiOutlineArrowsExpand />
                   </IconButton>
                 </div>
                 <div>
-                  <IconButton aria-label="" onClick={previousPage}>
+                  <IconButton
+                    aria-label="previous page"
+                    disabled={!img.canPrev}
+                    onClick={previousPage}
+                  >
                     <HiChevronLeft />
                   </IconButton>
-                  <IconButton aria-label="" onClick={nextPage}>
+                  <IconButton
+                    aria-label="next page"
+                    disabled={!img.canNext}
+                    onClick={nextPage}
+                  >
                     <HiChevronRight />
                   </IconButton>
                 </div>
               </div>
               <TransformComponent>
-                <img src={imgs[img]} className={classes.image} alt="test" />
+                <img
+                  src={imgs[img.index]}
+                  className={classes.image}
+                  alt="test"
+                />
               </TransformComponent>
             </React.Fragment>
           )}

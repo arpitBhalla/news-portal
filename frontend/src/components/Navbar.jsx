@@ -51,9 +51,9 @@ export default () => {
             <a href="https://facebook.com/sirsatoday">
               <FaFacebookSquare className={classes.icon} color="#3b5999" />
             </a>
-            <a href="https://facebook.com/sirsatoday">
+            {/* <a href="https://facebook.com/sirsatoday">
               <FaTwitter className={classes.icon} color="#55acee" />
-            </a>
+            </a> */}
             {/* <div>
               <Typography variant="body2" color="textSecondary">
                 <b>13</b>
@@ -63,9 +63,9 @@ export default () => {
                 Sirsa
               </Typography>
             </div> */}
-            <IconButton aria-label="account" onClick={() => {}}>
+            {/* <IconButton aria-label="account" onClick={() => {}}>
               <FaRegUserCircle />
-            </IconButton>
+            </IconButton> */}
           </Toolbar>
         </Container>
         <Divider />
