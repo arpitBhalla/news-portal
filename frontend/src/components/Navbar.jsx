@@ -35,8 +35,8 @@ export default () => {
       >
         <Container maxWidth="lg">
           <Toolbar className={classes.bar}>
-            <Typography variant="h6" style={{ flexGrow: 1 }}>
-              <b>Sirsa Today</b>
+            <Typography variant="h6" style={{ flexGrow: 1, color: "red" }}>
+              <b>सिरसा टुडे</b>
             </Typography>
             <Typography variant="body2" color="textSecondary">
               <b>

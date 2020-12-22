@@ -2,6 +2,7 @@ import React from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Navbar from "components/Navbar";
 import Container from "@material-ui/core/Container";
+import Hidden from "@material-ui/core/Hidden";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   HiOutlineZoomIn,
@@ -11,6 +12,7 @@ import {
   HiOutlineArrowsExpand,
 } from "react-icons/hi";
 import IconButton from "@material-ui/core/IconButton";
+import Pagination from "@material-ui/lab/Pagination";
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -51,6 +53,20 @@ const Epaper = () => {
       canPrev: index - 1 > 0,
     }));
   };
+  const handleChange = (event, value) => {
+    setImg((e) => ({ ...e, index: value - 1 }));
+  };
+  const panPageChange = (positionX) => {
+    // let f = true;
+    // if (f) {
+    //   if (positionX > 90 && img.canPrev) previousPage();
+    //   else if (positionX < -90 && img.canNext) nextPage();
+    //   f = false;
+    //   setTimeout(() => {
+    //     f = true;
+    //   }, 1000);
+    // }
+  };
 
   return (
     <div>
@@ -60,10 +76,9 @@ const Epaper = () => {
           defaultScale={1}
           defaultPositionX={200}
           defaultPositionY={100}
-          // onPanning={({ positionX }) => {
-          //   if (positionX > 90 && img.canPrev) previousPage();
-          //   else if (positionX < -90 && img.canNext) nextPage();
-          // }}
+          onPanning={({ positionX }) => {
+            panPageChange(positionX);
+          }}
         >
           {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
             <React.Fragment>
@@ -79,22 +94,31 @@ const Epaper = () => {
                     <HiOutlineArrowsExpand />
                   </IconButton>
                 </div>
-                <div>
-                  <IconButton
-                    aria-label="previous page"
-                    disabled={!img.canPrev}
-                    onClick={previousPage}
-                  >
-                    <HiChevronLeft />
-                  </IconButton>
-                  <IconButton
-                    aria-label="next page"
-                    disabled={!img.canNext}
-                    onClick={nextPage}
-                  >
-                    <HiChevronRight />
-                  </IconButton>
-                </div>
+                <Hidden smDown>
+                  <Pagination
+                    count={imgs.length}
+                    page={img.index + 1}
+                    onChange={handleChange}
+                  />
+                </Hidden>
+                <Hidden mdUp>
+                  <div>
+                    <IconButton
+                      aria-label="previous page"
+                      disabled={!img.canPrev}
+                      onClick={previousPage}
+                    >
+                      <HiChevronLeft />
+                    </IconButton>
+                    <IconButton
+                      aria-label="next page"
+                      disabled={!img.canNext}
+                      onClick={nextPage}
+                    >
+                      <HiChevronRight />
+                    </IconButton>
+                  </div>
+                </Hidden>
               </div>
               <TransformComponent>
                 <img

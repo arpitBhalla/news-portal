@@ -2,12 +2,13 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import loadable from "@loadable/component";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import Loading from "components/Loading";
 
 const Auth = loadable(() => import("./Auth"), {
-  fallback: <LinearProgress />,
+  fallback: <Loading />,
 });
-const Doctor = loadable(() => import("./Epaper"), {
-  fallback: <LinearProgress />,
+const EPaper = loadable(() => import("./Epaper"), {
+  fallback: <Loading />,
 });
 
 const Pages = () => {
@@ -15,7 +16,7 @@ const Pages = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path={"/auth"} component={Auth} />
-        <Route path={"/"} component={Doctor} />
+        <Route path={"/"} component={EPaper} />
       </Switch>
     </BrowserRouter>
   );
