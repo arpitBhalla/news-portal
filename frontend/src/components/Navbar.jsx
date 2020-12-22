@@ -12,8 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   bar: {
-    display: "flex",
-    justifyContent: "space-between",
+    padding: 0,
   },
   icon: {
     fontSize: 20,
