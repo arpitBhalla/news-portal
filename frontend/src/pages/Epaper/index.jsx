@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Navbar from "components/Navbar";
-// import { pdfjs, Document, Page } from "react-pdf";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import { Paper } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import Article from "components/Article";
 
 const Epaper = () => {
   React.useEffect(() => {
@@ -18,10 +18,26 @@ const Epaper = () => {
     <div>
       <Navbar />
       <Container maxWidth="md">
-        <Typography variant="h5" color="textPrimary">
-          Latest News
-        </Typography>
-        <Box component={Paper}>kjo</Box>
+        <Article />
+        <TransformWrapper
+          defaultScale={1}
+          defaultPositionX={"100%"}
+          defaultPositionY={100}
+        >
+          {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+            <React.Fragment>
+              <div className="tools">
+                <button onClick={zoomIn}>+</button>
+                <button onClick={zoomOut}>-</button>
+                <button onClick={resetTransform}>x</button>
+              </div>
+              <TransformComponent>
+                <img src={require("./logo512.png").default} alt="test" />
+                <div>Example text</div>
+              </TransformComponent>
+            </React.Fragment>
+          )}
+        </TransformWrapper>
         <br />
         <br />
         <br />

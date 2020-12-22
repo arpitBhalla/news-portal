@@ -10,12 +10,12 @@ import theme from "core/theme";
 export default () => (
   <React.StrictMode>
     {/* <Provider store={store}> */}
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <SnackbarProvider>
+    <SnackbarProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <App />
-      </SnackbarProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </SnackbarProvider>
     {/* </Provider> */}
   </React.StrictMode>
 );

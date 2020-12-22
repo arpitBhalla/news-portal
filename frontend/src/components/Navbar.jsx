@@ -55,7 +55,7 @@ export default () => {
             <a href="https://facebook.com/sirsatoday">
               <FaTwitter className={classes.icon} color="#55acee" />
             </a>
-            <div>
+            {/* <div>
               <Typography variant="body2" color="textSecondary">
                 <b>13</b>
                 <sup>o</sup>C
@@ -63,7 +63,7 @@ export default () => {
               <Typography variant="caption" color="textSecondary">
                 Sirsa
               </Typography>
-            </div>
+            </div> */}
             <IconButton aria-label="account" onClick={() => {}}>
               <FaRegUserCircle />
             </IconButton>
@@ -73,9 +73,11 @@ export default () => {
       </AppBar>
       <div className={classes.toolbar}></div>
       <Container maxWidth="lg">
-        <marquee style={{ paddingTop: 5 }}>
-          Breaking News LIVE updates: Night curfew in Maharashtra's municipal
-          corporations starting Saturday
+        <marquee>
+          <Typography variant="subtitle1" color="textSecondary">
+            Breaking News LIVE updates: Night curfew in Maharashtra's municipal
+            corporations starting Saturday
+          </Typography>
         </marquee>
       </Container>
     </>

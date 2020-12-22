@@ -9,7 +9,7 @@ import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Grow from "@material-ui/core/Grow";
 import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+// import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
@@ -17,8 +17,8 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormLabel from "@material-ui/core/FormLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
-import EmailIcon from "@material-ui/icons/EmailOutlined";
-import PasswordIcon from "@material-ui/icons/LockOpen";
+// import EmailIcon from "@material-ui/icons/EmailOutlined";
+// import PasswordIcon from "@material-ui/icons/LockOpen";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import axiosFetch from "core/axiosFetch";
 
@@ -87,7 +87,7 @@ export default function SignInSide() {
       <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            {/* <LockOutlinedIcon /> */}
           </Avatar>
           <Typography component="h1" variant="h4" color="textSecondary">
             <b>
@@ -109,7 +109,7 @@ export default function SignInSide() {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <EmailIcon color="action" />
+                    {/* <EmailIcon color="action" /> */}
                   </InputAdornment>
                 ),
               }}
@@ -132,7 +132,7 @@ export default function SignInSide() {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PasswordIcon color="action" />
+                        {/* <PasswordIcon color="action" /> */}
                       </InputAdornment>
                     ),
                   }}
